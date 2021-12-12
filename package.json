@@ -1,0 +1,27 @@
+{
+  "name": "express-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "schema": "sequelize-auto -o \"./schema\" -d findnearbyplaces-api -h localhost -u postgres -p 5432 -x PostgreSQL -e postgres"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.2",
+    "http-errors": "~1.6.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "reserved-words": "^0.1.2",
+    "sequelize": "^6.12.0-beta.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-auto": "^0.8.7"
+  }
+}
