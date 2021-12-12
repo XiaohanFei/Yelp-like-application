@@ -3,8 +3,8 @@ const auth = function(req, res, next) {
         next()
     } else {
         res.json({
-            done: 400,
-            msg: "auth fail, login first"
+            done: false,
+            message: "auth fail, login first"
         })
     }
 }
