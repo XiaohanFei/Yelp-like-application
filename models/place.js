@@ -42,19 +42,18 @@ const del = async function (params) {
 };
 
 const getList = async function (params) {
-  const result = await db.place.findAll({
-      where: {
-          name: {[Op.like]: `${params.search_term || ''}`},
-        //   category_id: 
-      },
-      include: [{
-          model: db.category,
-          where: {
-              category
-          }
-      }]
-  })
-//   const result = await db.place.findAll();
+  // const result = await db.place.findAll({
+  //     where: {
+  //         name: {[Op.like]: `${params.search_term || ''}`}
+  //     },
+  //     include: [{
+  //         model: db.category,
+  //         where: {
+  //             category
+  //         }
+  //     }]
+  // })
+  const result = await db.place.findAll();
   return result;
 };
 
