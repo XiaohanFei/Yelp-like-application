@@ -2,16 +2,16 @@
 
 base_url: https://xiaohanfei-findnearbyplaces.herokuapp.com
 
-/users/login
+/login
 
-/users/customer
+/customer
 
-/actions/category
+/category
 
-/actions/photo
+/photo
 
-/actions/place
+/place
 
-/actions/search
+/search
 
-/actions/review
+/review

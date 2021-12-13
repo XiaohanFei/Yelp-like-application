@@ -38,6 +38,17 @@ app.use(
   })
 );
 
+
+// cors
+app.all('*', function (req, res, next) {
+  let originHeader=req.headers.origin;
+  res.header("Access-Control-Allow-Origin", originHeader);
+  // res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", usersRouter);
