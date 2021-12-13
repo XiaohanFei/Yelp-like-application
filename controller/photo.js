@@ -7,6 +7,7 @@ const createphoto = async function (req, res) {
     res.json({
       done: true,
       data: data,
+      id: data.id
     });
   } else {
     res.json({

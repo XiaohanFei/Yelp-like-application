@@ -17,11 +17,11 @@ router.delete('/photo', photoController.deletephoto)
 router.get('/search', placeController.search)
 router.post('/place', placeController.createplace)
 router.put('/place', placeController.updateplace)
-router.delete('/place', placeController.deleteplace)
+router.delete('/place/:place_id', placeController.deleteplace)
 
 router.post('/review', reviewController.createreview)
 router.put('/review', reviewController.updatereview)
-router.delete('/review', reviewController.deletereview)
+router.delete('/review/:review_id', reviewController.deletereview)
 
 
 module.exports = router;

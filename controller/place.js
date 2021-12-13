@@ -1,7 +1,9 @@
 const models = require("../models/place");
 
 const createplace = async function (req, res) {
-  const params = req.fields;
+  const params = Object.assign(req.fields, {
+    customer_id: req.session.customer_id,
+  });
   const data = await models.create(params);
   if (data != null) {
     res.json({
@@ -25,7 +27,7 @@ const updateplace = async function (req, res) {
   if (data != null) {
     res.json({
       done: true,
-      id: data.id
+      id: params.place_id
     });
   } else {
     res.json({
@@ -36,7 +38,7 @@ const updateplace = async function (req, res) {
 };
 
 const deleteplace = async function (req, res) {
-  const params = req.fields;
+  const params = req.params;
   const data = await models.del(params);
   if (data != null) {
     res.json({
@@ -57,7 +59,7 @@ const search = async function (req, res) {
   if (data != null) {
     res.json({
       done: true,
-      data: data,
+      result: data,
     });
   } else {
     res.json({

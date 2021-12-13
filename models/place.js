@@ -25,7 +25,7 @@ const update = async function (params) {
     },
     {
       where: {
-        place_id: params.place_id,
+        id: params.place_id,
       },
     }
   );
@@ -35,7 +35,7 @@ const update = async function (params) {
 const del = async function (params) {
   const result = await db.place.destroy({
     where: {
-      place_id: params.place_id,
+      id: params.place_id,
     },
   });
   return result;

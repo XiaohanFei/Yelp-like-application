@@ -7,7 +7,7 @@ const createcategory = async function (req, res) {
     res.json({
       done: true,
       message: 'success',
-      data: data,
+      id: data.id
     });
   } else {
     res.json({

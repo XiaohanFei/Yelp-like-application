@@ -9,6 +9,7 @@ const createreview = async function (req, res) {
     res.json({
       done: true,
       data: data,
+      id: data.id
     });
   } else {
     res.json({
@@ -25,6 +26,7 @@ const updatereview = async function (req, res) {
     res.json({
       done: true,
       message: "success",
+      id: params.review_id
     });
   } else {
     res.json({
@@ -35,7 +37,8 @@ const updatereview = async function (req, res) {
 };
 
 const deletereview = async function (req, res) {
-  const params = req.fields;
+  const params = req.params;
+  console.log(params)
   const data = await models.del(params);
   if (data != null) {
     res.json({
