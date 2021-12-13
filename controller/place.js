@@ -30,7 +30,7 @@ const updateplace = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -46,7 +46,7 @@ const deleteplace = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -62,7 +62,7 @@ const search = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "empty database",
+      message: "error in database",
     });
   }
 };

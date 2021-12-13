@@ -1,7 +1,9 @@
 const models = require("../models/review");
 
 const createreview = async function (req, res) {
-  const params = Object.assign(req.fields, {customer_id: req.session.customer_id});
+  const params = Object.assign(req.fields, {
+    customer_id: req.session.customer_id,
+  });
   const data = await models.create(params);
   if (data != null) {
     res.json({
@@ -11,7 +13,7 @@ const createreview = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -22,11 +24,11 @@ const updatereview = async function (req, res) {
   if (data != null) {
     res.json({
       done: true,
-      message: "success"
+      message: "success",
     });
   } else {
     res.json({
-        done: false,
+      done: false,
       message: "error in database",
     });
   }
@@ -43,7 +45,7 @@ const deletereview = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -59,7 +61,7 @@ const getList = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "empty database",
+      message: "error in database",
     });
   }
 };

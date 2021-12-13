@@ -6,12 +6,13 @@ const createcategory = async function (req, res) {
   if (data != null) {
     res.json({
       done: true,
+      message: 'success',
       data: data,
     });
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -23,11 +24,12 @@ const updatecategory = async function (req, res) {
     res.json({
       done: true,
       data: data,
+      message: "success",
     });
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -39,11 +41,12 @@ const deletecategory = async function (req, res) {
     res.json({
       done: true,
       data: data,
+      message: 'success'
     });
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -59,7 +62,7 @@ const getList = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "empty database",
+      message: "error in database",
     });
   }
 };

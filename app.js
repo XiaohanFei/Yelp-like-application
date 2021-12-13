@@ -40,10 +40,10 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/users", usersRouter);
+app.use("/", usersRouter);
 // add login gard
 app.use(authControllor.auth);
-app.use("/actions", actionsRouter);
+app.use("/", actionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -11,7 +11,7 @@ const createphoto = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -27,7 +27,7 @@ const updatephoto = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -43,7 +43,7 @@ const deletephoto = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "error in database",
+      message: "error in database",
     });
   }
 };
@@ -59,7 +59,7 @@ const getList = async function (req, res) {
   } else {
     res.json({
       done: false,
-      data: "empty database",
+      message: "error in database",
     });
   }
 };
