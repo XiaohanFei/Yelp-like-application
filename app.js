@@ -24,7 +24,7 @@ app.use(logger("dev"));
 //   credentials: true, // allow session cookie from browser to pass through
 // }));
 
-app.all('*', function(req, res, next) {undefined
+app.all('*', function(req, res, next) {
 
   res.header("Access-Control-Allow-Origin", "https://xiaohanfei.github.io");//前端域名
 
