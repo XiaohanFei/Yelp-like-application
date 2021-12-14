@@ -1,6 +1,7 @@
 const createError = require("http-errors");
 const path = require("path");
 const express = require("express");
+const cors = require('cors');
 const formidableMiddleware = require('express-formidable');
 const session = require("express-session");
 const logger = require("morgan");
@@ -20,11 +21,11 @@ app.use(logger("dev"));
 // app.use(express.urlencoded({ extended: false }));
 app.use(formidableMiddleware())
 
-app.all("*", function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+app.use(cors({
+  origin: "https://xiaohanfei.github.io/", // allow to server to accept request from different origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // allow session cookie from browser to pass through
+}));
 
 app.use(
   session({

@@ -8,6 +8,7 @@
     "schema": "sequelize-auto -o \"./schema\" -d findnearbyplaces-api -h localhost -u postgres -p 5432 -x PostgreSQL -e postgres"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-formidable": "^1.2.0",
