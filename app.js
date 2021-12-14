@@ -11,30 +11,30 @@ const usersRouter = require("./routes/users");
 const actionsRouter = require("./routes/actions");
 
 const app = express();
+app.use(cors({
+  // https://xiaohanfei.github.io
+  origin: "https://xiaohanfei.github.io", // allow to server to accept request from different origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // allow session cookie from browser to pass through
+}));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
 app.use(logger("dev"));
-// app.use(cors({
-//   // https://xiaohanfei.github.io
-//   origin: "https://xiaohanfei.github.io", // allow to server to accept request from different origin
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   credentials: true, // allow session cookie from browser to pass through
-// }));
 
-app.all('*', function(req, res, next) {
+// app.all('*', function(req, res, next) {
 
-  res.header("Access-Control-Allow-Origin", "https://xiaohanfei.github.io");//前端域名
+//   res.header("Access-Control-Allow-Origin", "https://xiaohanfei.github.io");//前端域名
 
-  res.header("Access-Control-Allow-Credentials",'true');
+//   res.header("Access-Control-Allow-Credentials",'true');
 
-  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+//   res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
 
-  next();
+//   next();
 
-});
+// });
 
 app.use(formidableMiddleware())
 
