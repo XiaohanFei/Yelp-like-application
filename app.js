@@ -18,15 +18,14 @@ app.set("view engine", "jade");
 
 app.use(logger("dev"));
 app.use(cors({
-  origin: "https://xiaohanfei.github.io/", // allow to server to accept request from different origin
+  // https://xiaohanfei.github.io
+  origin: "https://xiaohanfei.github.io", // allow to server to accept request from different origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // allow session cookie from browser to pass through
 }));
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(formidableMiddleware())
-
-
 
 
 app.use(
